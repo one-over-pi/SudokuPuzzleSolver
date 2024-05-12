@@ -36,7 +36,7 @@ Print Solved Sudoku: Once solved, the Sudoku puzzle is printed in a readable for
 
 ## Note
 
-This solver uses a simple backtracking algorithm and may not be optimized for solving all Sudoku puzzles efficiently. It's intended for educational purposes and as a starting point for further exploration into Sudoku-solving algorithms. If the algorithm is unable to solve any cells, the program will stil print what it was able to solve.
+This solver uses a simple backtracking algorithm and may not be optimized for solving all Sudoku puzzles efficiently. It's intended for educational purposes and as a starting point for further exploration into Sudoku-solving algorithms. If the algorithm is unable to solve any cells, the program will still print what it was able to solve.
 
 ## Future Features
 
