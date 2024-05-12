@@ -42,4 +42,4 @@ This solver uses a simple backtracking algorithm and may not be optimized for so
 
 1. If the context_solve() function fails to solve any tiles, the code will resort to a different strategy: It will identify the tile with the maximum number of filled-in values within its corresponding row, column, and grid. Subsequently, it will randomly assign a value to this tile, attempting to solve the puzzle anew. This process will continue iteratively until either a contradiction is encountered, necessitating backtracking to replace the latest randomly assigned value, or until a solution is successfully obtained.
 
-2. The program will introduce the capability to randomly generate Sudoku puzzles with varying preset difficulties. There will be an option to select the desired level of challenge, ranging from easy to hard.
+2. I will introduce the capability to randomly generate Sudoku puzzles with varying preset difficulties. There will be an option to select the desired level of challenge, ranging from easy to hard.
