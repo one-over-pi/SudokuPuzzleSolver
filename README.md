@@ -18,21 +18,25 @@ Print Solved Sudoku: Once solved, the Sudoku puzzle is printed in a readable for
 
 ## Methods
 
-    create_sudoku(): Creates a pre-made Sudoku puzzle.
+create_sudoku(): Creates a pre-made Sudoku puzzle.
 
-    clamp_index_to_row(index): Converts the Sudoku index to a row index.
+clamp_index_to_row(index): Converts the Sudoku index to a row index.
 
-    clamp_index_to_column(index): Converts the Sudoku index to a column index.
+clamp_index_to_column(index): Converts the Sudoku index to a column index.
 
-    return_row(index): Returns a row of the Sudoku grid.
+return_row(index): Returns a row of the Sudoku grid.
 
-    return_column(index): Returns a column of the Sudoku grid.
+return_column(index): Returns a column of the Sudoku grid.
 
-    return_grid(row_index, column_index): Returns the 3x3 grid from the Sudoku puzzle as a 9x1 list.
+return_grid(row_index, column_index): Returns the 3x3 grid from the Sudoku puzzle as a 9x1 list.
 
-    context_solve(index): Uses data from intersecting rows/columns and grids to logically deduce the missing number for a given cell.
+get_cell_with_potential_solutions(): Identifies an empty cell in the Sudoku puzzle and determines the possible values that can be placed in that cell without violating Sudoku rules. It returns the index of the cell along with a list of valid candidate values.
 
-    solve_sudoku(): Iteratively solves the Sudoku puzzle using backtracking.
+regenerate_sudoku_copy(): Updates a copy of the Sudoku puzzle grid based on the provided guess tree, which tracks the sequence of guesses made during the solving process. It ensures that the solver explores different solution paths while maintaining the integrity of previous guesses and solution attempts.
+
+context_solve(index): Uses data from intersecting rows/columns and grids to logically deduce the missing number for a given cell.
+
+solve_sudoku(): Iteratively solves the Sudoku puzzle using backtracking.
 
 ## Note
 
@@ -40,6 +44,5 @@ This solver uses a simple backtracking algorithm and may not be optimized for so
 
 ## Future Features
 
-1. If the context_solve() function fails to solve any tiles, the code will resort to a different strategy: It will identify the tile with the maximum number of filled-in values within its corresponding row, column, and grid. Subsequently, it will randomly assign a value to this tile, attempting to solve the puzzle anew. This process will continue iteratively until either a contradiction is encountered, necessitating backtracking to replace the latest randomly assigned value, or until a solution is successfully obtained.
-
-2. I will introduce the capability to randomly generate Sudoku puzzles with varying preset difficulties. There will be an option to select the desired level of challenge, ranging from easy to hard.
+1. I will introduce the capability to randomly generate Sudoku puzzles with varying preset difficulties. There will be an option to select the desired level of challenge, ranging from easy to hard.
+2. I will implement a more robust/elegant algorithm compared to the current one, using more of the sudoku meta rather than a trial and error approach.
