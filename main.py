@@ -24,15 +24,15 @@ class SudokuSolver:
         
         # Pre-made sudoku puzzle
         return [
-            [None, None, None, None, None,    5, None, None, None],
-            [None, None, None,    4,    7, None, None, None, None],
-            [None, None,    5,    6, None,    1, None,    7, None],
-            [None,    5,    1, None, None, None,    2, None, None],
-            [   9, None,    2, None,    8, None, None,    1, None],
-            [None, None, None, None,    5, None,    3,    8, None],
-            [None,    4, None, None, None, None, None, None, None],
-            [   3, None, None, None, None, None,    4, None, None],
-            [   2, None, None,    9, None, None,    1, None,    3]
+            [8, None, None, None, None, None, None, None, None],
+            [None, None, 3, 6, None, None, None, None, None],
+            [None, 7, None, None, 9, None, 2, None, None],
+            [None, 5, None, None, None, 7, None, None, None],
+            [None, None, None, None, 4, 5, 7, None, None],
+            [None, None, None, 1, None, None, None, 3, None],
+            [None, None, 1, None, None, None, None, 6, 8],
+            [None, None, 8, 5, None, None, None, 1, None],
+            [None, 9, None, None, None, None, 4, None, None]
         ]
     
     def clamp_index_to_row(self, index):
@@ -209,6 +209,9 @@ class SudokuSolver:
         # Store the number of iterations we have to do in order to solve the puzzle
         iterations = 0
 
+        # Store the number of guesses used
+        guesses = 0
+
         # Store whether or not the puzzle is solved or not
         solved = False
 
@@ -264,6 +267,7 @@ class SudokuSolver:
 
             # If the sudoku is not solved
             if not(solved):
+                guesses += 1
 
                 # If the guess tree is empty
                 if guess_tree == []:
@@ -389,7 +393,8 @@ class SudokuSolver:
                         self.regenerate_sudoku_copy(guess_tree)
 
 
-        # When solving loop has finished, print how many iterations it took to solve as much of the puzzle as we could
+        # When solving loop has finished, print how many iterations and guesses it took to solve the puzzle
         print("Iterations to solve: " + str(iterations))
+        print("Guesses to solve: " + str(guesses))
     
 sudoku_solver = SudokuSolver()
