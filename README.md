@@ -40,7 +40,7 @@ solve_sudoku(): Iteratively solves the Sudoku puzzle using backtracking.
 
 ## Note
 
-This solver uses a simple backtracking algorithm and may not be optimized for solving all Sudoku puzzles efficiently. It's intended for educational purposes and as a starting point for further exploration into Sudoku-solving algorithms. If the algorithm is unable to solve any cells, the program will still print what it was able to solve.
+This solver uses a simple backtracking algorithm and may not be optimized for solving all Sudoku puzzles efficiently. It's intended for educational purposes and as a starting point for further exploration into Sudoku-solving algorithms.
 
 ## Future Features
 
